@@ -3,7 +3,7 @@ Venture Pipeline – Auth (Sign In / Sign Up)
 A polished authentication UI for the Venture Pipeline Management System, built with React + TypeScript and Tailwind CSS, using lucide-react icons.
 This module provides a single component that cleanly toggles between Sign In and Sign Up, includes client-side validation, a password strength indicator, and a modern, accessible UI that matches the Venture Pipeline design language (green/emerald accents, soft shadows, rounded corners).
 
-✨ Features
+Features
 
 Unified Auth component that switches between Sign In / Sign Up states
 
@@ -25,7 +25,7 @@ Iconography via lucide-react (Mail, Lock, Eye, EyeOff, User, Building)
 
 Accessible labels and focus styles
 
-📁 What’s inside
+What’s inside
 src/
   Auth.tsx      # Your main component (Sign In / Sign Up)
   index.css     # Tailwind base/styles (or your global CSS)
@@ -45,7 +45,7 @@ getPasswordStrength() – 0–5 scale with visual bars and label
 
 Simulated submit (fake 2s API delay) → replace with real API or NextAuth
 
-🧰 Tech stack
+Tech stack
 
 React 18 + TypeScript
 
@@ -56,11 +56,11 @@ lucide-react (icons)
 Works in Next.js (App Router or Pages Router) or Vite (React).
 If you don’t have Tailwind set up yet, see the Tailwind Setup section below.
 
-🚀 Getting started
+Getting started
 1) Install dependencies
-# If you already have a React+TS project, just add:
+
 npm i lucide-react
-# If you need Tailwind:
+
 npm i -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 
@@ -91,7 +91,7 @@ Make sure you include Tailwind’s base layers at the top of your app.
 @tailwind components;
 @tailwind utilities;
 
-🔌 Using the component
+Using the component
 Option A — Next.js (App Router)
 
 Put your Auth.tsx in app/(auth)/components/Auth.tsx (or components/Auth.tsx).
@@ -140,7 +140,7 @@ Start the dev server:
 
 npm run dev
 
-🧪 Validation rules
+ Validation rules
 
 Email: required, must match ^[^\s@]+@[^\s@]+\.[^\s@]+$
 
@@ -159,7 +159,7 @@ Password Strength (0–5):
 
 Error messages appear beneath each field. Inputs turn red when invalid.
 
-🖌️ Customization
+Customization
 Colors & theme
 
 Primary accents use green/emerald gradient:
@@ -189,7 +189,7 @@ Layout
 
 Component is mobile-first and centered. To embed in an existing page, wrap <Auth /> with your layout shell and remove the outer min-h-screen container if needed.
 
-🔐 Wiring to real authentication
+Wiring to real authentication
 
 Right now, submit simulates an API call:
 
@@ -222,7 +222,7 @@ After success, redirect to /dashboard.
 
 Security note: never log or store raw passwords on the client; send them over HTTPS to a trusted backend only.
 
-♿ Accessibility
+Accessibility
 
 Labels are explicitly tied to inputs with htmlFor.
 
@@ -240,7 +240,7 @@ Add aria-live="polite" on the error container for screen readers.
 
 Set meaningful titles/aria-labels on icon-only buttons (e.g., the eye toggle).
 
-📦 Scripts
+Scripts
 
 If you used Vite:
 
@@ -255,7 +255,7 @@ npm run dev
 npm run build
 npm start
 
-🗺️ Roadmap
+Roadmap
 
 Hook up real authentication (NextAuth, Supabase, custom API)
 
@@ -267,7 +267,7 @@ Expand social login options
 
 Unit tests for validation logic and UI states
 
-🤝 Contributing
+Contributing
 
 PRs welcome!
 Please keep changes consistent with the current design language (rounded corners, green/emerald accents, soft shadows). For larger changes, open an issue to discuss first.
