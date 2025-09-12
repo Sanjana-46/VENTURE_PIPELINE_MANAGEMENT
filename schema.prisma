@@ -1,0 +1,33 @@
+generator client { provider = "prisma-client-js" }
+datasource db { provider = "postgresql"; url = env("DATABASE_URL") }
+
+enum Stage { INTAKE DIAGNOSTICS READINESS CAPITAL_FACILITATION }
+enum CapitalStatus { NOT_STARTED IN_PROGRESS FACILITATED }
+
+model Sector { id Int @id @default(autoincrement()) name String @unique ventures Venture[] }
+model Country { code String @id name String ventures Venture[] }
+
+model Venture {
+  id String @id @default(uuid())
+  code String @unique
+  name String
+  sectorId Int
+  countryCode String
+  stage Stage
+  readinessScore Int?
+  capitalStatus CapitalStatus
+  capitalFacilitatedUsd Int? @default(0)
+  lastUpdated DateTime @default(now())
+  sector        Sector   @relation(fields: [sectorId], references: [id])
+  country       Country  @relation(fields: [countryCode], references: [code])
+  capitalEvents CapitalEvent[]
+}
+
+model CapitalEvent {
+  id Int @id @default(autoincrement())
+  ventureId String
+  amountUsd Int
+  status CapitalStatus
+  createdAt DateTime @default(now())
+  venture Venture @relation(fields: [ventureId], references: [id])
+}
