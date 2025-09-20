@@ -1,0 +1,40 @@
+{
+  "info": {
+    "name": "VPMS API (Local)",
+    "_postman_id": "vpms-local-collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "List Ventures",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:4000/api/ventures"
+      }
+    },
+    {
+      "name": "Metrics",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:4000/api/metrics"
+      }
+    },
+    {
+      "name": "Create Venture",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"code\": \"VEN-2025-200\",\n  \"name\": \"EduTech Phnom Penh\",\n  \"sector\": \"Education\",\n  \"country\": \"Cambodia\",\n  \"stage\": \"INTAKE\",\n  \"readinessScore\": 10,\n  \"capitalStatus\": \"NOT_STARTED\",\n  \"capitalFacilitatedUsd\": 0\n}"
+        },
+        "url": "http://localhost:4000/api/ventures"
+      }
+    }
+  ]
+}
